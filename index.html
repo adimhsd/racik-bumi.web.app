@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racik Bumi — Jamu Tradisional &amp; Roti Olahan UMKM</title>
+    <meta
+      name="description"
+      content="Racik Bumi menghadirkan jamu tradisional Nusantara dari rempah segar dan roti serta makanan ringan olahan UMKM yang dipanggang hangat setiap hari tanpa pengawet."
+    />
+    <meta property="og:title" content="Racik Bumi — Jamu Tradisional & Roti Olahan UMKM" />
+    <meta
+      property="og:description"
+      content="Hangatnya rempah bumi, lembutnya roti rumahan. Pesan jamu segar, roti panggang, makanan ringan UMKM, hingga snack box & hampers sehat."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://racik-bumi.web.app" />
+    <meta property="og:image" content="https://racik-bumi.web.app/images/hero-racik-bumi.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <!-- Header / Navigasi -->
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#beranda" class="brand" aria-label="Racik Bumi Beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <rect width="64" height="64" rx="16" fill="#1B3427" />
+              <path d="M32 13C24 20 20 29 22 38C28 36 35 30 39 22C37 18 35 15 32 13Z" fill="#C87D20" />
+              <path d="M44 21C35 23 28 29 24 38C32 39 40 35 45 27C45 25 45 23 44 21Z" fill="#FAF6EE" fill-opacity="0.92" />
+              <path d="M18 42H46C45 48.5 39.5 52 32 52C24.5 52 19 48.5 18 42Z" fill="#C87D20" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Racik Bumi</strong>
+            <small>Jamu &amp; Dapur UMKM</small>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigasi Utama">
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#katalog">Katalog</a>
+          <a href="#cerita">Cerita Kami</a>
+          <a href="#hampers">Snack Box &amp; Hampers</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="cart-trigger" id="openCartBtn" aria-label="Buka keranjang pesanan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 8h12l-1 12H7L6 8Z" />
+              <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+            </svg>
+            <span class="cart-trigger-label">Keranjang</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+
+          <a href="#katalog" class="btn btn-primary btn-sm hide-mobile" id="headerOrderBtn">Pesan Sekarang</a>
+
+          <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka menu navigasi" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <div class="container mobile-nav-inner">
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#katalog">Katalog Produk</a>
+          <a href="#cerita">Cerita Kami</a>
+          <a href="#hampers">Snack Box &amp; Hampers</a>
+          <a href="#faq">Tanya Jawab</a>
+          <a href="#" class="btn btn-primary" id="mobileWaBtn">Hubungi via WhatsApp</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="beranda">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              100% Bahan Alami • Dapur UMKM Nusantara
+            </span>
+            <h1>Hangatnya Rempah Bumi, <em>Lembutnya Roti Rumahan.</em></h1>
+            <p class="hero-lead">
+              Racik Bumi memadukan kesegaran <strong>jamu tradisional</strong> dari rimpang pilihan petani lokal dengan
+              <strong>roti panggang dan makanan ringan olahan UMKM</strong> yang dibuat segar setiap pagi tanpa pengawet.
+            </p>
+            <div class="hero-cta">
+              <a href="#katalog" class="btn btn-primary btn-lg">Jelajahi Katalog</a>
+              <button type="button" class="btn btn-outline btn-lg" id="heroWaBtn">
+                Konsultasi &amp; Pesan WA
+              </button>
+            </div>
+            <ul class="hero-trust" aria-label="Jaminan kualitas Racik Bumi">
+              <li>
+                <strong>0% Pengawet</strong>
+                <span>Racikan segar harian</span>
+              </li>
+              <li>
+                <strong>Rempah Petani Lokal</strong>
+                <span>Kunyit, kencur &amp; jahe merah</span>
+              </li>
+              <li>
+                <strong>Halal &amp; Higienis</strong>
+                <span>Dapur rumahan terstandar</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-photo-frame">
+              <img
+                src="/images/hero-racik-bumi.jpg"
+                alt="Botol jamu tradisional Kunyit Asam dan Beras Kencur bersama keranjang roti sisir dan roti susu hangat Racik Bumi"
+                width="960"
+                height="720"
+              />
+            </div>
+            <div class="hero-floating-card">
+              <span class="floating-kicker">Batch Pagi Ini</span>
+              <strong>Jamu Segar &amp; Roti Baru Keluar Oven</strong>
+              <p>Pengiriman Same-Day setiap pukul 08.00 – 17.00 WIB</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botanical Ribbon -->
+      <div class="ingredient-ribbon" aria-hidden="true">
+        <div class="ribbon-track">
+          <span>Kunyit Empu Segar</span>
+          <span>•</span>
+          <span>Jahe Merah Pilihan</span>
+          <span>•</span>
+          <span>Beras Kencur Wangi</span>
+          <span>•</span>
+          <span>Gula Aren Organik</span>
+          <span>•</span>
+          <span>Roti Sisir Mentega</span>
+          <span>•</span>
+          <span>Bolu Pisang Rumahan</span>
+          <span>•</span>
+          <span>Keripik Olahan UMKM</span>
+          <span>•</span>
+          <span>Kunyit Empu Segar</span>
+          <span>•</span>
+          <span>Jahe Merah Pilihan</span>
+          <span>•</span>
+          <span>Beras Kencur Wangi</span>
+          <span>•</span>
+          <span>Gula Aren Organik</span>
+          <span>•</span>
+          <span>Roti Sisir Mentega</span>
+        </div>
+      </div>
+
+      <!-- Dual Signature Pillars -->
+      <section class="section pillars" id="keunggulan">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">Dua Jiwa Racik Bumi</span>
+            <h2>Dari Apotek Alam hingga Meja Hangat Keluarga</h2>
+            <p>
+              Kami percaya sajian sehat tidak harus membosankan. Racik Bumi mempertemukan tradisi jamu Nusantara yang
+              menyegarkan dengan kehangatan roti dan kudapan olahan tangan UMKM.
+            </p>
+          </div>
+
+          <div class="pillars-grid">
+            <article class="pillar-card pillar-jamu reveal">
+              <div class="pillar-media">
+                <img
+                  src="/images/jamu-kunyit-asam.jpg"
+                  alt="Racikan jamu tradisional Kunyit Asam segar Racik Bumi"
+                  loading="lazy"
+                />
+              </div>
+              <div class="pillar-body">
+                <span class="pillar-tag">Lini 01 • Jamu Tradisional</span>
+                <h3>Racikan Rempah Asli, Segar Tanpa Langu</h3>
+                <p>
+                  Direbus perlahan dari rimpang segar yang dipanen langsung dari kebun mitra, dipadukan gula aren murni
+                  sehingga rasanya lembut, harum, dan mudah dicintai generasi muda maupun orang tua.
+                </p>
+                <ul class="pillar-list">
+                  <li>Kunyit Asam, Beras Kencur &amp; Wedang Jahe Merah</li>
+                  <li>Tanpa pemanis buatan, pewarna, atau pengawet</li>
+                  <li>Tersedia botol personal 350 ml &amp; botol keluarga 1 liter</li>
+                </ul>
+                <button type="button" class="text-link" data-jump-category="jamu">
+                  Lihat semua jamu &rarr;
+                </button>
+              </div>
+            </article>
+
+            <article class="pillar-card pillar-bakery reveal">
+              <div class="pillar-media">
+                <img
+                  src="/images/roti-artisan-umkm.jpg"
+                  alt="Roti sisir mentega dan roti susu panggang hangat olahan UMKM Racik Bumi"
+                  loading="lazy"
+                />
+              </div>
+              <div class="pillar-body">
+                <span class="pillar-tag">Lini 02 • Roti &amp; Kudapan UMKM</span>
+                <h3>Roti Empuk &amp; Camilan Renyah Buatan Tangan</h3>
+                <p>
+                  Diolah dalam skala kecil setiap subuh menggunakan mentega pilihan, telur segar, dan hasil bumi lokal
+                  seperti pisang raja dan singkong mentega untuk menghasilkan cita rasa rumahan yang autentik.
+                </p>
+                <ul class="pillar-list">
+                  <li>Roti Sisir Mentega, Milk Bun Pandan &amp; Bolu Gula Aren</li>
+                  <li>Keripik singkong &amp; pisang rempah renyah tanpa pengawet</li>
+                  <li>Siap untuk sarapan, bekal, hingga snack box acara</li>
+                </ul>
+                <button type="button" class="text-link" data-jump-category="roti">
+                  Lihat roti &amp; camilan &rarr;
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Product Catalog -->
+      <section class="section catalog" id="katalog">
+        <div class="container">
+          <div class="catalog-top reveal">
+            <div>
+              <span class="section-kicker">Katalog Produk</span>
+              <h2>Pilihan Segar Hari Ini</h2>
+              <p>Pilih varian favorit Anda, masukkan ke keranjang, lalu kirim pesanan langsung via WhatsApp.</p>
+            </div>
+            <div class="filter-bar" id="categoryFilters" role="tablist" aria-label="Filter kategori produk"></div>
+          </div>
+
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Craft & Story Section -->
+      <section class="section story" id="cerita">
+        <div class="container story-grid">
+          <div class="story-intro reveal">
+            <span class="section-kicker">Cerita &amp; Proses Kami</span>
+            <h2>Tumbuh Bersama Petani Rempah &amp; Ibu-Ibu Perajin Dapur</h2>
+            <p>
+              Racik Bumi lahir dari keinginan sederhana: melestarikan kebiasaan minum jamu dan menikmati roti rumahan
+              yang jujur bahannya, sembari membuka ruang berkarya bagi pelaku UMKM lokal di sekitar kami.
+            </p>
+            <div class="story-media-inset">
+              <img
+                src="/images/camilan-kudapan-umkm.jpg"
+                alt="Bolu pisang gula aren dan makanan ringan olahan UMKM Racik Bumi"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="story-steps">
+            <article class="step-card reveal">
+              <span class="step-num">01</span>
+              <div>
+                <h3>Seleksi Hasil Bumi Lokal</h3>
+                <p>
+                  Rimpang kunyit, kencur, jahe merah, pisang raja, dan gula aren kami ambil langsung dari petani dan
+                  pasar tradisional terpilih setiap pagi.
+                </p>
+              </div>
+            </article>
+
+            <article class="step-card reveal">
+              <span class="step-num">02</span>
+              <div>
+                <h3>Racik &amp; Panggang Skala Kecil</h3>
+                <p>
+                  Kami tidak menimbun stok lama. Jamu direbus dengan api stabil agar sari rempah keluar sempurna, dan
+                  roti dipanggang sesuai kuota harian agar tetap empuk alami.
+                </p>
+              </div>
+            </article>
+
+            <article class="step-card reveal">
+              <span class="step-num">03</span>
+              <div>
+                <h3>Kemas Higienis &amp; Antar Hangat</h3>
+                <p>
+                  Setiap botol disterilkan sebelum pengisian, roti dikemas food-grade, dan pesanan dikirim tepat waktu
+                  langsung ke rumah, kantor, atau lokasi acara Anda.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hampers & Snack Box Section -->
+      <section class="section hampers" id="hampers">
+        <div class="container">
+          <div class="hampers-shell reveal">
+            <div class="hampers-copy">
+              <span class="section-kicker kicker-light">Pesanan Khusus &amp; Kemitraan</span>
+              <h2>Snack Box Acara, Hampers Sehat &amp; Peluang Reseller</h2>
+              <p>
+                Ingin menyuguhkan hidangan yang lebih berkesan dan menyehatkan untuk rapat kantor, pengajian, arisan,
+                atau bingkisan keluarga? Kami siap meracik paket sesuai kebutuhan dan anggaran Anda.
+              </p>
+
+              <div class="hampers-cards">
+                <div class="mini-offer">
+                  <strong>Snack Box Rapat &amp; Acara</strong>
+                  <span>Mulai Rp 22.000/box • Isi roti, kue/keripik &amp; jamu mini 200 ml (Min. 20 box).</span>
+                </div>
+                <div class="mini-offer">
+                  <strong>Hampers Sehat Nusantara</strong>
+                  <span>Besek bambu / box kraft cantik + pita &amp; kartu ucapan personal untuk orang tersayang.</span>
+                </div>
+                <div class="mini-offer">
+                  <strong>Mitra Reseller &amp; Kafe</strong>
+                  <span>Harga khusus grosir untuk kedai kopi, toko oleh-oleh, maupun reseller rumahan.</span>
+                </div>
+              </div>
+
+              <div class="hampers-actions">
+                <button type="button" class="btn btn-gold btn-lg" id="hampersWaBtn">
+                  Tanya Paket Hampers / Snack Box
+                </button>
+              </div>
+            </div>
+
+            <div class="hampers-visual">
+              <img
+                src="/images/jamu-beras-kencur.jpg"
+                alt="Botol jamu Beras Kencur dan Jahe Merah Racik Bumi untuk hampers sehat"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">Kata Pelanggan</span>
+            <h2>Dipercaya untuk Meja Rumah hingga Acara Kantor</h2>
+          </div>
+          <div class="testimonial-grid" id="testimonialGrid"></div>
+        </div>
+      </section>
+
+      <!-- FAQ & Location -->
+      <section class="section faq-section" id="faq">
+        <div class="container faq-layout">
+          <div class="faq-intro reveal">
+            <span class="section-kicker">Tanya Jawab &amp; Info Dapur</span>
+            <h2>Informasi Pemesanan</h2>
+            <p>Masih ada pertanyaan seputar varian jamu, jadwal panggang roti, atau pengiriman? Cek ringkasannya di sini.</p>
+
+            <div class="info-box">
+              <div>
+                <span>Jam Operasional Dapur</span>
+                <strong>Senin – Minggu, 07.30 – 17.30 WIB</strong>
+              </div>
+              <div>
+                <span>Alamat Dapur UMKM</span>
+                <strong id="storeAddressDisplay">Jl. Nusantara Asri No. 18, Yogyakarta</strong>
+              </div>
+              <div>
+                <span>Instagram Resmi</span>
+                <strong id="instagramDisplay">@racikbumi.id</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-list reveal" id="faqList"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#beranda" class="brand brand-light">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none">
+                <rect width="64" height="64" rx="16" fill="#2A4C3A" />
+                <path d="M32 13C24 20 20 29 22 38C28 36 35 30 39 22C37 18 35 15 32 13Z" fill="#C87D20" />
+                <path d="M44 21C35 23 28 29 24 38C32 39 40 35 45 27C45 25 45 23 44 21Z" fill="#FAF6EE" fill-opacity="0.92" />
+                <path d="M18 42H46C45 48.5 39.5 52 32 52C24.5 52 19 48.5 18 42Z" fill="#C87D20" />
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong>Racik Bumi</strong>
+              <small>Jamu Tradisional &amp; Roti Olahan UMKM</small>
+            </span>
+          </a>
+          <p>
+            Merawat tradisi jamu Nusantara dan menghadirkan roti serta kudapan rumahan yang jujur bahannya, segar setiap
+            hari dari dapur UMKM lokal.
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="#katalog">Katalog Produk</a></li>
+            <li><a href="#cerita">Cerita Kami</a></li>
+            <li><a href="#hampers">Snack Box &amp; Hampers</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Hubungi Kami</h4>
+          <ul>
+            <li><a href="#" id="footerWaLink">WhatsApp Pemesanan</a></li>
+            <li><a href="#" id="footerIgLink" target="_blank" rel="noopener noreferrer">Instagram @racikbumi.id</a></li>
+            <li><span id="footerAddress">Jl. Nusantara Asri No. 18, Yogyakarta</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> Racik Bumi. Dibangun untuk UMKM Nusantara di <strong>racik-bumi.web.app</strong>.</p>
+      </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div class="modal-backdrop" id="productModal" hidden>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button type="button" class="icon-close" id="closeModalBtn" aria-label="Tutup detail produk">&times;</button>
+        <div class="modal-content" id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- Slide-Over Cart Drawer -->
+    <div class="drawer-backdrop" id="cartDrawer" hidden>
+      <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Keranjang Pesanan Racik Bumi">
+        <div class="drawer-header">
+          <div>
+            <h3>Keranjang Pesanan</h3>
+            <p>Atur jumlah lalu kirim pesanan otomatis via WhatsApp.</p>
+          </div>
+          <button type="button" class="icon-close" id="closeCartBtn" aria-label="Tutup keranjang">&times;</button>
+        </div>
+
+        <div class="drawer-body" id="cartItems"></div>
+
+        <div class="drawer-footer">
+          <div class="checkout-fields">
+            <label>
+              <span>Nama Pemesan</span>
+              <input type="text" id="customerName" placeholder="Contoh: Ibu Sari" autocomplete="name" />
+            </label>
+            <label>
+              <span>Catatan / Alamat Pengiriman</span>
+              <textarea
+                id="customerNote"
+                rows="2"
+                placeholder="Contoh: Kirim jam 10 pagi ke Jl. Kaliurang KM 6, jamu tanpa es"
+              ></textarea>
+            </label>
+          </div>
+
+          <div class="cart-summary-row">
+            <span>Estimasi Total</span>
+            <strong id="cartSubtotal">Rp 0</strong>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="checkoutWaBtn">
+            Kirim Pesanan via WhatsApp
+          </button>
+          <p class="drawer-hint">Pembayaran (Transfer / QRIS / COD area tertentu) dikonfirmasi langsung via WhatsApp.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

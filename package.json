@@ -1,0 +1,21 @@
+{
+  "name": "racik-bumi-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page UMKM Racik Bumi - Jamu Tradisional & Roti Olahan Rumahan (racik-bumi.web.app)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "firebase:login": "npx firebase-tools login",
+    "deploy": "npm run build && npx firebase-tools deploy --only hosting:racik-bumi",
+    "deploy:preview": "npm run build && npx firebase-tools hosting:channel:deploy preview"
+  },
+  "dependencies": {
+    "firebase": "^11.0.2"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
