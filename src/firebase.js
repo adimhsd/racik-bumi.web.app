@@ -43,7 +43,11 @@ export function trackEvent(eventName, params = {}) {
 }
 
 export const storeConfig = {
-  whatsappNumber: (import.meta.env.VITE_WHATSAPP_NUMBER || "6281234567890").replace(/\D/g, ""),
+  whatsappNumber: (import.meta.env.VITE_WHATSAPP_NUMBER || "628568755799").replace(/\D/g, ""),
+  whatsappDisplay: import.meta.env.VITE_WHATSAPP_DISPLAY || "+62 856-8755-799",
   instagramHandle: import.meta.env.VITE_INSTAGRAM_HANDLE || "racikbumi.id",
-  storeAddress: import.meta.env.VITE_STORE_ADDRESS || "Jl. Nusantara Asri No. 18, Yogyakarta"
+  storeAddress:
+    import.meta.env.VITE_STORE_ADDRESS ||
+    "Pondok Mutiara, Kel. Gegunung, Kec. Sumber, Kab. Cirebon (dekat area Pondok Pesantren Al-Bahjah)",
+  mapsShareUrl: import.meta.env.VITE_MAPS_SHARE_URL || "https://share.google/aTZx1Duw1MrZKUpSN"
 };

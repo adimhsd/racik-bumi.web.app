@@ -4,6 +4,25 @@ import { CATEGORIES, PRODUCTS, TESTIMONIALS, FAQS } from "./data/products.js";
 
 const CART_STORAGE_KEY = "racik_bumi_cart_v1";
 
+const WA_DEFAULT_MESSAGES = {
+  header:
+    "Halo Ibu Ari (Racik Bumi), saya ingin memesan jamu tradisional dan roti rumahan. Boleh info menu yang ready hari ini?",
+  mobile:
+    "Halo Ibu Ari (Racik Bumi), saya ingin bertanya mengenai stok jamu tradisional dan roti rumahan hari ini.",
+  hero:
+    "Halo Ibu Ari (Racik Bumi), saya tertarik memesan jamu tradisional dan roti olahan UMKM. Boleh konsultasi varian yang tersedia hari ini?",
+  founder:
+    "Halo Ibu Ari Kusmiran (Racik Bumi), salam kenal! Saya ingin bertanya dan memesan olahan jamu serta roti dari dapur keluarga Racik Bumi.",
+  hampers:
+    "Halo Ibu Ari (Racik Bumi), saya tertarik dengan paket Snack Box / Hampers Sehat / Reseller di area Cirebon. Boleh minta informasi paket dan harganya?",
+  location:
+    "Halo Ibu Ari (Racik Bumi), saya ingin tanya rute atau konfirmasi ambil pesanan langsung di Pondok Mutiara, Gegunung, Sumber, Cirebon.",
+  footer:
+    "Halo Ibu Ari (Racik Bumi), saya melihat website racik-bumi.web.app dan ingin memesan produk Racik Bumi.",
+  floating:
+    "Halo Ibu Ari (Racik Bumi), saya ingin bertanya dan memesan jamu tradisional / roti rumahan hari ini."
+};
+
 let activeCategory = "semua";
 let cart = loadCart();
 let toastTimer = null;
@@ -47,6 +66,17 @@ function showToast(message) {
 function buildWhatsAppUrl(message) {
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${storeConfig.whatsappNumber}?text=${encoded}`;
+}
+
+function wireWhatsAppLink(elementId, message, locationTag) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  el.href = buildWhatsAppUrl(message);
+  el.target = "_blank";
+  el.rel = "noopener noreferrer";
+  el.addEventListener("click", () => {
+    trackEvent("click_whatsapp_cta", { location: locationTag });
+  });
 }
 
 function addToCart(productId) {
@@ -172,6 +202,9 @@ function openProductModal(productId) {
   const body = document.getElementById("modalBody");
   if (!product || !modal || !body) return;
 
+  const directWaMessage = `Halo Ibu Ari (Racik Bumi), saya ingin memesan ${product.name} (${product.unit} - ${formatRupiah(product.price)}). Apakah stoknya tersedia hari ini?`;
+  const directWaUrl = buildWhatsAppUrl(directWaMessage);
+
   body.innerHTML = `
     <div class="modal-grid">
       <div class="modal-img">
@@ -196,9 +229,14 @@ function openProductModal(productId) {
             <span>${product.shelfLife}</span>
           </div>
         </div>
-        <button type="button" class="btn btn-primary btn-block" id="modalAddBtn">
-          Tambah ke Keranjang — ${formatRupiah(product.price)}
-        </button>
+        <div class="modal-cta-stack">
+          <button type="button" class="btn btn-primary btn-block" id="modalAddBtn">
+            Tambah ke Keranjang — ${formatRupiah(product.price)}
+          </button>
+          <a href="${directWaUrl}" class="btn btn-outline btn-block" id="modalDirectWaBtn" target="_blank" rel="noopener noreferrer">
+            Pesan Langsung via WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   `;
@@ -209,6 +247,10 @@ function openProductModal(productId) {
   document.getElementById("modalAddBtn")?.addEventListener("click", () => {
     addToCart(product.id);
     closeProductModal();
+  });
+
+  document.getElementById("modalDirectWaBtn")?.addEventListener("click", () => {
+    trackEvent("click_whatsapp_cta", { location: "product_modal", item_id: product.id });
   });
 
   trackEvent("view_item", {
@@ -319,7 +361,7 @@ function checkoutViaWhatsApp() {
     .filter(Boolean);
 
   const message = [
-    "Halo Racik Bumi, saya ingin memesan:",
+    "Halo Ibu Ari (Racik Bumi), saya ingin memesan:",
     "",
     ...lines,
     "",
@@ -327,7 +369,7 @@ function checkoutViaWhatsApp() {
     `Nama: ${name}`,
     `Catatan/Alamat: ${note}`,
     "",
-    "Mohon info ketersediaan & total ongkirnya. Terima kasih!"
+    "Mohon info ketersediaan & pengirimannya. Terima kasih!"
   ].join("\n");
 
   trackEvent("begin_checkout", {
@@ -388,35 +430,45 @@ function renderFaqs() {
 function hydrateStoreContacts() {
   const igHandle = storeConfig.instagramHandle.replace(/^@/, "");
   const igUrl = `https://instagram.com/${igHandle}`;
-  const defaultWaUrl = buildWhatsAppUrl(
-    "Halo Racik Bumi, saya ingin bertanya tentang jamu tradisional dan roti olahan UMKM hari ini."
-  );
 
   const addressEl = document.getElementById("storeAddressDisplay");
+  const locationAddressEl = document.getElementById("locationAddressDisplay");
   const footerAddressEl = document.getElementById("footerAddress");
+  const faqWaEl = document.getElementById("faqWaDisplay");
+  const locationPhoneEl = document.getElementById("locationPhoneLink");
   const igDisplayEl = document.getElementById("instagramDisplay");
   const footerIgEl = document.getElementById("footerIgLink");
-  const footerWaEl = document.getElementById("footerWaLink");
-  const mobileWaEl = document.getElementById("mobileWaBtn");
+  const openMapsBtn = document.getElementById("openMapsBtn");
+  const footerMapsLink = document.getElementById("footerMapsLink");
   const yearEl = document.getElementById("currentYear");
 
   if (addressEl) addressEl.textContent = storeConfig.storeAddress;
+  if (locationAddressEl) locationAddressEl.textContent = storeConfig.storeAddress;
   if (footerAddressEl) footerAddressEl.textContent = storeConfig.storeAddress;
+  if (faqWaEl) faqWaEl.textContent = `${storeConfig.whatsappDisplay} (Ibu Ari Kusmiran)`;
+  if (locationPhoneEl) locationPhoneEl.textContent = storeConfig.whatsappDisplay;
   if (igDisplayEl) igDisplayEl.textContent = `@${igHandle}`;
   if (footerIgEl) {
     footerIgEl.href = igUrl;
     footerIgEl.textContent = `Instagram @${igHandle}`;
   }
-  if (footerWaEl) {
-    footerWaEl.href = defaultWaUrl;
-    footerWaEl.target = "_blank";
-    footerWaEl.rel = "noopener noreferrer";
-  }
-  if (mobileWaEl) {
-    mobileWaEl.href = defaultWaUrl;
-    mobileWaEl.target = "_blank";
-    mobileWaEl.rel = "noopener noreferrer";
-  }
+  if (openMapsBtn) openMapsBtn.href = storeConfig.mapsShareUrl;
+  if (footerMapsLink) footerMapsLink.href = storeConfig.mapsShareUrl;
+
+  // Pastikan seluruh tombol & tautan WhatsApp mengarah ke +62 856-8755-799 dengan pesan default
+  wireWhatsAppLink("headerOrderBtn", WA_DEFAULT_MESSAGES.header, "header");
+  wireWhatsAppLink("mobileWaBtn", WA_DEFAULT_MESSAGES.mobile, "mobile_nav");
+  wireWhatsAppLink("heroWaBtn", WA_DEFAULT_MESSAGES.hero, "hero");
+  wireWhatsAppLink("founderWaBtn", WA_DEFAULT_MESSAGES.founder, "founder_story");
+  wireWhatsAppLink("hampersWaBtn", WA_DEFAULT_MESSAGES.hampers, "hampers");
+  wireWhatsAppLink("locationWaBtn", WA_DEFAULT_MESSAGES.location, "location_map");
+  wireWhatsAppLink("locationPhoneLink", WA_DEFAULT_MESSAGES.location, "location_phone");
+  wireWhatsAppLink("footerWaLink", WA_DEFAULT_MESSAGES.footer, "footer");
+  wireWhatsAppLink("floatingWaBtn", WA_DEFAULT_MESSAGES.floating, "floating_button");
+
+  const footerWaEl = document.getElementById("footerWaLink");
+  if (footerWaEl) footerWaEl.textContent = `WhatsApp ${storeConfig.whatsappDisplay}`;
+
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 }
 
@@ -448,24 +500,6 @@ function bindEvents() {
       closeProductModal();
       closeCartDrawer();
     }
-  });
-
-  document.getElementById("heroWaBtn")?.addEventListener("click", () => {
-    trackEvent("click_whatsapp_cta", { location: "hero" });
-    window.open(
-      buildWhatsAppUrl("Halo Racik Bumi, saya ingin konsultasi & pesan jamu tradisional serta roti rumahan."),
-      "_blank",
-      "noopener,noreferrer"
-    );
-  });
-
-  document.getElementById("hampersWaBtn")?.addEventListener("click", () => {
-    trackEvent("click_whatsapp_cta", { location: "hampers" });
-    window.open(
-      buildWhatsAppUrl("Halo Racik Bumi, saya tertarik dengan paket Snack Box / Hampers Sehat / Reseller. Boleh minta katalog lengkapnya?"),
-      "_blank",
-      "noopener,noreferrer"
-    );
   });
 
   document.querySelectorAll("[data-jump-category]").forEach((btn) => {

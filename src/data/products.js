@@ -131,37 +131,37 @@ export const PRODUCTS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Kunyit asamnya segar banget, tidak langu dan manisnya pas dari gula aren. Roti sisirnya juga empuk seperti buatan ibu di rumah.",
+    quote: "Kunyit asam racikan Ibu Ari segar banget, tidak langu dan manisnya pas dari gula aren. Roti sisirnya juga empuk seperti buatan sendiri di rumah.",
     name: "Ibu Ratna W.",
-    role: "Pelanggan Keluarga • Sleman"
+    role: "Pelanggan Keluarga • Sumber, Cirebon"
   },
   {
-    quote: "Pesan 60 paket snack box isi roti susu dan botol jamu untuk rapat kantor, semua peserta puas dan langsung tanya beli di mana.",
+    quote: "Pesan 60 paket snack box isi roti susu dan botol jamu untuk pengajian dan rapat dekat area Al-Bahjah, semua tamu puas dan langsung tanya nomor pesannya.",
     name: "Dimas Prasetyo",
-    role: "Koordinator Acara • Yogyakarta"
+    role: "Koordinator Acara • Gegunung, Cirebon"
   },
   {
-    quote: "Beras kencur dan bolu pisang gula arennya jadi stok wajib akhir pekan. Kemasannya rapi, bersih, dan pengirimannya cepat.",
+    quote: "Beras kencur dan bolu pisang gula arennya jadi stok wajib akhir pekan sekeluarga. Kemasannya rapi, bersih, dan pelayanannya sangat ramah.",
     name: "Siti Rahmawati",
-    role: "Pelanggan Rutin • Bantul"
+    role: "Pelanggan Rutin • Kota Cirebon"
   }
 ];
 
 export const FAQS = [
   {
     question: "Apakah jamu dan roti Racik Bumi menggunakan bahan pengawet?",
-    answer: "Tidak sama sekali. Seluruh jamu kami racik dari rimpang segar dan gula aren asli tanpa pengawet maupun pemanis buatan. Roti kami pun dipanggang setiap pagi dalam jumlah terbatas agar selalu lembut dan segar."
+    answer: "Tidak sama sekali. Seluruh jamu kami racik sendiri di dapur rumahan dari rimpang segar dan gula aren asli tanpa pengawet maupun pemanis buatan. Roti kami pun dipanggang dalam jumlah terbatas setiap pagi agar selalu lembut dan segar."
   },
   {
     question: "Berapa lama daya tahan jamu dan roti?",
     answer: "Jamu tahan 4–6 hari bila disimpan di kulkas suhu 4°C (hindari suhu ruang terlalu lama). Roti rumahan tahan 2–3 hari di suhu ruang dalam wadah tertutup, sementara makanan ringan kering tahan hingga 4 minggu."
   },
   {
-    question: "Bagaimana sistem pemesanan dan pengirimannya?",
-    answer: "Anda bisa memilih produk di katalog lalu klik 'Kirim Pesanan via WhatsApp'. Untuk area dalam kota tersedia pengiriman Instant & Same-Day setiap hari pukul 08.00–17.00 WIB. Untuk keripik & makanan ringan kering, kami melayani pengiriman ke seluruh Indonesia."
+    question: "Bagaimana sistem pemesanan dan pengirimannya di area Cirebon?",
+    answer: "Anda bisa memilih produk di katalog lalu klik 'Kirim Pesanan via WhatsApp' ke +62 856-8755-799. Tersedia pengiriman kurir lokal / Same-Day untuk area Sumber, Gegunung, sekitar Al-Bahjah, hingga Kota & Kabupaten Cirebon, atau ambil langsung di Pondok Mutiara (konfirmasi via WA terlebih dahulu)."
   },
   {
     question: "Apakah menerima pesanan Snack Box, Hampers, atau Reseller?",
-    answer: "Tentu! Kami melayani pesanan Snack Box acara/rapat/pengajian mulai dari 20 paket (H-2), Hampers sehat dengan kartu ucapan khusus, serta program kemitraan reseller/titip jual untuk kafe atau toko oleh-oleh."
+    answer: "Tentu! Kami melayani pesanan Snack Box untuk pengajian, arisan, rapat, maupun acara keluarga mulai dari 20 paket (H-2), Hampers sehat dengan kartu ucapan personal, serta kerja sama titip jual / reseller."
   }
 ];

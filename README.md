@@ -24,9 +24,11 @@ npm run dev
 Edit file `.env`:
 
 ```env
-VITE_WHATSAPP_NUMBER=6281234567890
+VITE_WHATSAPP_NUMBER=628568755799
+VITE_WHATSAPP_DISPLAY=+62 856-8755-799
 VITE_INSTAGRAM_HANDLE=racikbumi.id
-VITE_STORE_ADDRESS=Jl. Nusantara Asri No. 18, Yogyakarta
+VITE_STORE_ADDRESS=Pondok Mutiara, Kel. Gegunung, Kec. Sumber, Kab. Cirebon (dekat area Pondok Pesantren Al-Bahjah)
+VITE_MAPS_SHARE_URL=https://share.google/aTZx1Duw1MrZKUpSN
 ```
 
 ## Deploy ke Firebase Hosting (`racik-bumi.web.app`)

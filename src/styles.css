@@ -862,27 +862,105 @@ h4 {
   background: var(--accent-terra);
 }
 
-/* Story Section */
-.story-grid {
+/* Story & Founder Section */
+.founder-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 4.5vw, 4rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3.5vw, 3rem);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
 }
 
-.story-media-inset {
-  margin-top: 1.75rem;
-  border-radius: var(--radius-lg);
+.founder-copy h2 {
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.founder-copy h2 em {
+  font-style: italic;
+  color: var(--accent-terra);
+  font-weight: 500;
+}
+
+.founder-copy p {
+  margin: 0 0 1rem;
+  color: var(--ink-body);
+  font-size: 0.96rem;
+}
+
+.founder-quote {
+  margin: 1.35rem 0 1.65rem;
+  padding: 1.15rem 1.35rem;
+  border-left: 3px solid var(--accent-gold);
+  background: var(--bg-canvas);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-serif);
+  font-size: 1.04rem;
+  color: var(--ink-forest);
+  line-height: 1.55;
+}
+
+.founder-quote footer {
+  margin-top: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+.founder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.founder-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.founder-photo-wrap {
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   aspect-ratio: 4 / 3;
   box-shadow: var(--shadow-card);
 }
 
-.story-media-inset img {
+.founder-photo-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.founder-badges {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.founder-badges > div {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+}
+
+.founder-badges strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--ink-forest);
+}
+
+.founder-badges span {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
 }
 
 .story-steps {
@@ -891,11 +969,17 @@ h4 {
   gap: 1.15rem;
 }
 
+.story-steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
 .step-card {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1.25rem;
-  padding: 1.6rem;
+  gap: 1.1rem;
+  padding: 1.5rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -911,14 +995,152 @@ h4 {
 }
 
 .step-card h3 {
-  font-size: 1.22rem;
+  font-size: 1.18rem;
   margin-bottom: 0.4rem;
 }
 
 .step-card p {
   margin: 0;
-  font-size: 0.93rem;
+  font-size: 0.92rem;
   color: var(--ink-muted);
+}
+
+/* Location & Embedded Map */
+.location-section {
+  background: var(--bg-canvas);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.location-info h2 {
+  font-size: clamp(1.85rem, 3vw, 2.55rem);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.location-info > p {
+  margin: 0 0 1.45rem;
+  color: var(--ink-body);
+}
+
+.location-details {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.location-item span {
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 0.15rem;
+}
+
+.location-item strong {
+  color: var(--ink-forest);
+  font-size: 0.95rem;
+}
+
+.location-item a {
+  color: var(--accent-terra);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.location-map-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.map-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--ink-forest);
+  color: #faf6ee;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.map-pin-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.map-frame-wrap {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  background: var(--bg-stone);
+}
+
+.map-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Modal action stack */
+.modal-cta-stack {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+/* Floating WhatsApp Button */
+.wa-float {
+  position: fixed;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.2rem;
+  border-radius: 999px;
+  background-color: #1f7a4c;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 14px 32px -10px rgba(27, 52, 39, 0.55);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+  background-color: #18623d;
+}
+
+.wa-float svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* Hampers Section */
@@ -1495,13 +1717,19 @@ h4 {
 
   .hero-grid,
   .pillars-grid,
-  .story-grid,
+  .founder-card,
+  .story-steps-row,
   .hampers-shell,
   .testimonial-grid,
+  .location-grid,
   .faq-layout,
   .footer-grid,
   .modal-grid {
     grid-template-columns: 1fr;
+  }
+
+  .map-frame-wrap {
+    height: 320px;
   }
 
   .hero-floating-card {
@@ -1527,6 +1755,17 @@ h4 {
 
   .cart-trigger-label {
     display: none;
+  }
+
+  .founder-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .wa-float {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.84rem;
   }
 }
 
